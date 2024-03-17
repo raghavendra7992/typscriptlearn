@@ -1,0 +1,12 @@
+<div appHighlight >
+    @for(users of user;track users.name){
+        @if(users.sal>10000){
+        <h2>name-{{users.name}}  status-{{users.isSingle?"SINGLE":"married"}} salary:{{users.sal}}</h2>
+        }
+        @else{
+            <h2>name-{{users.name}} status-{{users.isSingle?"single":"married"}} salary:Garib </h2>
+        }
+    }
+
+</div>
+
