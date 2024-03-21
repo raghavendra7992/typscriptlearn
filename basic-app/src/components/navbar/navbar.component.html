@@ -4,9 +4,14 @@
             <a routerLink="/">CodeBin</a>
         </h2>
         <ul>
+            <li routerLink="/create" routerLinkActive="active">create</li>
+            @if(authService.isAuthenticated()){
+                <li (click)="authService.usersignout()">Logout</li>
+            }@else {
+                <li routerLink="/login" routerLinkActive="active">Login</li>
+                <li routerLink="/signup" routerLinkActive="active">Signup</li>
+            }
             <li routerLink="/about" routerLinkActive="active">About</li>
-            <li routerLink="/login" routerLinkActive="active">Login</li>
-            <li routerLink="/signup" routerLinkActive="active">Signup</li>
         </ul>
     </nav>
 </div>

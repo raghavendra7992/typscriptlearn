@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from '../components/navbar/navbar.component';
+import { firebaseConfig } from '../firebaseconfig';
+import { initializeApp } from "firebase/app"
 
 @Component({
   selector: 'app-root',
@@ -10,5 +12,7 @@ import { NavbarComponent } from '../components/navbar/navbar.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'basic-app';
+ constructor(){
+  initializeApp(firebaseConfig)
+ }
 }
