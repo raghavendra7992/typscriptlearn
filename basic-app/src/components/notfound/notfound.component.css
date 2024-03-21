@@ -1,0 +1,9 @@
+div{
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    padding: 10%;
+    border: 2px solid salmon;
+    background-color: aliceblue;
+
+}

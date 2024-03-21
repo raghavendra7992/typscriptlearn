@@ -1,0 +1,49 @@
+<form action="" class="container" #registerForm="ngForm">
+    <h1>Signup Here</h1>
+    <input type="text" placeholder="Please Enter Your Name"
+    required
+    minlength="3"
+    ngModel
+    name="name"
+    #name="ngModel"
+    >
+    <input type="email" placeholder="Please Type Your Email" 
+    required
+    pattern="^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$"
+    ngModel
+    name="email"
+    #email="ngModel"
+    />
+    <h5 class="text"  [hidden]= "email.valid||email.untouched">!Enter correct Email</h5>
+    <input type="password" placeholder="Type Password"
+    required
+     minlength="6"
+
+     ngModel
+     name="password"
+     #password="ngModel"
+     />
+     <input type="text" placeholder="+91-xxxxxxxxx"
+     required
+     minlength="10"
+     
+     ngModel
+     name="contact"
+     #contact="ngModel"
+
+     >
+     <input type="date" placeholder="Date Of Birth"
+     required
+     ngModel
+     name="dob"
+     #dob="ngModel"
+
+     />
+
+    <h5 class="text"  [hidden]= "password.valid||password.untouched">!Password Did Not correct or Not Found</h5>
+    <button class="green" [disabled]= "registerForm.invalid" (click)="register(registerForm)">Signup</button>
+    <button class="red" (click)="reset(registerForm)">Reset</button>
+    
+    
+    
+    </form>

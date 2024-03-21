@@ -1,0 +1,8 @@
+<form class="container" [formGroup]= "binForm">
+    <h1>Code Snippet</h1>
+    <input type="text" placeholder="Title" [formControl]= 'tittle'/>
+    <h5 class="text"  [hidden]= "tittle.valid||tittle.untouched">title required</h5>
+    <input type="text" placeholder="Type Code" [formControl]= "code"/>
+    <h5 class="text"  [hidden]= "code.valid||code.untouched">not a valid code</h5>
+    <button class="green" [disabled]= "binForm.invalid" (click)="save()">Submit</button>
+    </form>

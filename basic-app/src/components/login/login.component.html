@@ -1,0 +1,12 @@
+<form action="" class="container" [formGroup]= "loginForm">
+<h1>Login</h1>
+<input type="email" placeholder="Please type ur Email" [formControl]= 'email'/>
+<h5 class="text"  [hidden]= "email.valid||email.untouched">!Enter correct Email</h5>
+<input type="password" placeholder="Type Password" [formControl]= "password"/>
+<h5 class="text"  [hidden]= "password.valid||password.untouched">!Password Did Not correct or Not Found</h5>
+<button class="green" [disabled]= "loginForm.invalid" (click)="login()">Login</button>
+<button class="red" (click)="reset()">Reset</button>
+
+
+
+</form>
