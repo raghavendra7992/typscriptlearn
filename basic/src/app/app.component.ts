@@ -4,11 +4,12 @@ import { UserComponent } from '../user/user.component';
 import { JokeComponent } from '../joke/joke.component';
 import { AComponent } from '../a/a.component';
 import { B1Component } from '../b1/b1.component';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,UserComponent,JokeComponent,AComponent,B1Component],
+  imports: [RouterOutlet,UserComponent,JokeComponent,AComponent,B1Component,ProductComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

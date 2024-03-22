@@ -1,0 +1,10 @@
+<div>
+    <li *ngFor="let product of products">
+        <p>Name: {{ product.name }}</p>
+        <p>Price: ${{ product.price }}</p>
+        <p style="color: green;" *ngIf="product.available; else notAvailable">Availability: Available</p>
+        <ng-template #notAvailable>
+          <p>Availability: Not Available</p>
+        </ng-template>
+      </li>
+</div>
