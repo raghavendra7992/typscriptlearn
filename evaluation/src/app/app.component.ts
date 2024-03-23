@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,8 +25,12 @@ export class AppComponent {
     ProductName: '',
     price: 0
   };
-  onSubmit(products:any){
-    // this.products.push({ ...this.product });
-    this.products = { ProductName: '', price: 0 };
+  constructor(private http:HttpClient){}
+  onSubmit(productAdd:any){
+    this.http.post('https://evaluation-10295-default-rtdb.firebaseio.com/products.json',productAdd)
+    .subscribe((response:any)=>{
+      console.log(response)
+    })
+      
   }
 }
